@@ -1,0 +1,25 @@
+.box {
+  position: absolute; 
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  
+}
+
+.bottomBtn {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.text {
+  margin-top: 2rem;
+}
