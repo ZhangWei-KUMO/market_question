@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import {Row,Col, Button } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
+import profilePic from '../public/demo.png'
 
 class Home extends Component{
   constructor(props){
@@ -51,7 +52,7 @@ class Home extends Component{
       </Head>
 
       <main className={styles.main}>
-        
+        <Image src={profilePic} alt="Picture of the author" layout="fill"/>
       </main>
       
       <Link href={`/form?price=${price}`}><a>
