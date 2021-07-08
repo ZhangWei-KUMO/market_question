@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "pm2 next start",
+    "lint": "next lint",
+    "list":"pm2 list"
   },
   "dependencies": {
     "antd": "^4.16.6",
