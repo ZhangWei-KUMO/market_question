@@ -87,7 +87,7 @@ class Home extends Component{
     return(
       <div className={styles.container}>
       <Head>
-        <title>答岸</title>
+        <title>答岸——市场问卷调查</title>
         <meta name="description" content="全球首个华人大师平台" />
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <link rel="icon" href="/favicon.ico" />
