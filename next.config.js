@@ -2,6 +2,9 @@ const withAntdLess = require('next-plugin-antd-less');
 
 module.exports = withAntdLess({
   // optional
+  images: {
+    domains: ['dazclassbucket.oss-cn-beijing.aliyuncs.com'],
+  },
   modifyVars: { '@primary-color': '#005cc5' },
   // optional
   lessVarsFilePath: './src/styles/variables.less',

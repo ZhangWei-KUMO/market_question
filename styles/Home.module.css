@@ -5,18 +5,49 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(27, 27, 27);
   padding: 0 40%;
 }
 
 .main {
   height: 100vh;
-  width: 90vw;
-  overflow: hidden;
+  width: 100vw;
+  overflow: scroll;
   position: relative;
 }
 
+.header {
+  background-color: #fff;
+  padding-top: 0.7rem;
+  padding-left: 1rem;
+}
 
+.inputbox {
+  width: 60vw;
+  margin-top: 5px;
+}
+
+.imgbox {
+  width:400;
+  height:260;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.carouselimg {
+  border-radius: 1rem;
+  margin: 12px;
+}
+
+.ant-input {
+   background-color: gray;
+}
+
+.box {
+  padding: 1rem;
+  background-color: #fff;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -35,4 +66,5 @@
   line-height: 3rem;
   color: rgb(192, 0, 0);
   background-color: #fff;
+  box-shadow: 5px 5px 10px 2px rgb(0 0 0 / 40%);
 }
