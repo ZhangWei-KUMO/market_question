@@ -63,7 +63,7 @@ class Home extends Component{
         <Content>
         <Carousel autoplay>
           <div className={styles.imgbox}>
-           <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210702/162519484060de8158e4aa7.jpg"
+           <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/7b78db2a3701925920591664619/gBo3yADRGgAA.jpg!P13166.jpg"
              width={400}
              height={240}
              alt="master1"
@@ -71,7 +71,7 @@ class Home extends Component{
            />
           </div>
           <div className={styles.imgbox}>
-           <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210706/162554153660e3cba0463da.jpg"
+           <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/7945b6683701925920591580728/6NJlajdmVdYA.jpg!P13166.jpg"
                 width={400}
                 height={240}
                 alt="master2"
@@ -80,7 +80,7 @@ class Home extends Component{
            />
           </div>
           <div className={styles.imgbox}>
-           <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210707/162562493560e51167d3392.jpg"
+           <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/8cf2ccc43701925920581572247/4YnDjEjVV0kA.jpg!P13166.jpg"
                width={400}
                height={240}
                alt="master3"
@@ -89,7 +89,7 @@ class Home extends Component{
           </div>
         </Carousel>
         <Layout className={styles.box}>
-          <h1>猜你喜欢</h1>
+          <h1 className={styles.tip}>猜你喜欢</h1>
           <Row gutter={16}>
           {likes.map(item=>(
             <Col span={12} key={item.id}>
