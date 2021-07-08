@@ -2,19 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Component } from 'react'
 import styles from '../styles/Home.module.css'
-import { Carousel,Row,Col, Layout, Button,Input,Card } from 'antd';
-import Link from 'next/link';
+import { Carousel,Row,Col, Layout, Button,Input,Card,Modal } from 'antd';
 import profilePic from '../public/logo_white.png'
 import likes from '../public/data';
 
 const { Header, Content } = Layout;
-const { Search } = Input;
-const { Meta } = Card;
 
 class Home extends Component{
   constructor(props){
     super(props);
     this.state = {
+        tel:null,
         price:"45元/月"
     }
 }
@@ -22,7 +20,7 @@ class Home extends Component{
   static getInitialProps({query}) {
     return {query}
   }
-
+  
   componentDidMount(){
     let {price} = this.props.query;
     if(price){
@@ -31,16 +29,36 @@ class Home extends Component{
       })
     }
   }
+  
+   success = () =>{
+    Modal.success({
+      content: (
+        <div>
+          <p>感谢您参与本次模拟实验</p>
+          <Input value={this.state.tel}
+            placeholder="手机号码"
+             onChange={this.handleChange}/>
+          <p>请填写真实的手机号，产品上线后会赠予您一个月会员资格。</p>
+        </div>
+      ),
+      onOk() {},
+    });
+  }
+
+
+  handleChange = (event)=>{
+    this.setState({tel: event.target.value.trim()});
+  }
 
   submit =  async () => {  
-    const res = await fetch(`https://zhangwei-7gl977h782ef503e-1306346100.ap-shanghai.service.tcloudbase.com/rest-api/v1.0/quotation`)
-    const data = await res.json();
-   
-    if(!data){
-      alert("提交失败，请检查当前网络环境")
-    }else{
-      console.log(data)
-    }
+    let res = await fetch(URL,{
+      method:"POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify({price,tel})
+  })
+  alert("提交成功，三秒后将会返回首页")
   }
   render(){
     let {price} = this.state;
@@ -114,18 +132,16 @@ class Home extends Component{
         </Layout>
       </main>
       
-      <Link href={`/form?price=${price}`}><a>
       <div className={styles.bottomBtn}>
         <Row gutter={16}>
         <Col span={16}>
            会员价 {price}
         </Col>
         <Col span={8}>
-        <Button type="primary"> 立即购买</Button>
+        <Button type="primary" onClick={this.success}> 立即购买</Button>
         </Col>
         </Row>
       </div>
-      </a></Link>
     </div>
     )
   }

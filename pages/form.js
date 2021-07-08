@@ -36,11 +36,11 @@ class FormPage extends Component{
             <div>
             <div className={styles.box}>
             <center>
-           <h3 className={styles.title}>感谢您参与我们的问卷调查</h3>
+           <h3 className={styles.title}></h3>
             <Input value={tel}
             placeholder="请输入您的手机号码"
              onChange={this.handleChange}/>
-            <p className={styles.text}>产品上线后将赠送您首月会员账户，请注意短信查收</p>
+            <p className={styles.text}>请填写真实的手机号，产品上线后会赠予您一个月会员资格。</p>
 
            </center>
         </div>
