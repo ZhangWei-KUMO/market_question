@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 import { Carousel,Row,Col, Layout, Button,Input,Card } from 'antd';
 import Link from 'next/link';
 import profilePic from '../public/logo_white.png'
-import likes from './data';
+import likes from '../public/data';
 
 const { Header, Content } = Layout;
 const { Search } = Input;
