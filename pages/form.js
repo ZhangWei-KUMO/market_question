@@ -1,7 +1,6 @@
 import { Input, Button } from 'antd';
 import { Component } from 'react';
 import styles from '../styles/Form.module.css'
-const URL = "https://zhangwei-7gl977h782ef503e-1306346100.ap-shanghai.service.tcloudbase.com/rest-api/v1.0/quotation"
 class FormPage extends Component{
     constructor(props){
         super(props);

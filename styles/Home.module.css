@@ -21,6 +21,20 @@
   padding-left: 1rem;
 }
 
+.notes {
+  margin-top: 20px;
+}
+
+.slogan {
+  font-size: 1.2rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  line-height: 10px;
+  text-align: center;
+  padding-left: 20px;
+  padding-top: 15px;
+  float: left;
+  color: rgb(139, 110, 15);
+}
 .inputbox {
   width: 60vw;
   margin-top: 5px;
@@ -79,13 +93,32 @@
 .bottomBtn {
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 95vw;
   left: 0;
   height: 3rem;
-  font-size: 1rem;
+  font-size: .9rem;
   text-align: center;
   line-height: 3rem;
-  color: rgb(192, 0, 0);
-  background-color: #fff;
+  color: rgb(192, 125, 0);
+  background: linear-gradient(to right, #d7b779 , #ebd9ab);
   box-shadow: 5px 5px 10px 2px rgb(0 0 0 / 40%);
+  border-radius: 0 26px 26px 0;
+}
+
+.gold {
+  border-radius: 18px;
+  padding:0px 15px;
+  border:none;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 5px;
+  color: #c07d00;
+  background: linear-gradient(to left, #d6ac59 , #ecce82);
+}
+
+.gold:active,.gold:focus {
+  border-radius: 18px;
+  border:none;
+  color: #c07d00!important;
+  background: linear-gradient(to left, #d6ac59 , #ecce82)!important;
 }

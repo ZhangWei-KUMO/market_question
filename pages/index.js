@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Component } from 'react'
 import styles from '../styles/Home.module.css'
-import { Carousel,Row,Col, Layout, Button,Input,Card,Modal } from 'antd';
+import { Carousel,Row,Col, Layout, message,Input,Card,Modal } from 'antd';
 import profilePic from '../public/logo_white.png'
 import likes from '../public/data';
 
@@ -13,9 +13,12 @@ class Home extends Component{
     super(props);
     this.state = {
         tel:null,
+        isModalVisible:false,
+        isLoading:false,
         price:"45元/月"
     }
-}
+  }
+  
 
   static getInitialProps({query}) {
     return {query}
@@ -29,39 +32,58 @@ class Home extends Component{
       })
     }
   }
-  
-   success = () =>{
-    Modal.success({
-      content: (
-        <div>
-          <p>感谢您参与本次模拟实验</p>
-          <Input value={this.state.tel}
-            placeholder="手机号码"
-             onChange={this.handleChange}/>
-          <p>请填写真实的手机号，产品上线后会赠予您一个月会员资格。</p>
-        </div>
-      ),
-      onOk() {},
-    });
-  }
 
+  showModal = () => {
+    this.setState({
+      isModalVisible:true
+    })
+  };
+
+  handleCancel = () => {
+    this.setState({
+      isModalVisible:false
+    })
+  };
+  
+  // 确认按钮
+  handleOk = async () => {
+    let {tel,price} = this.state;
+    if(!tel || tel.length !== 11){
+      message.warning('请输入正确的手机电话号码');
+    }else{
+      this.setState({isLoading:true});
+      try{
+        let res = await fetch("/api/submit",{
+          method:"POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body:JSON.stringify({price,tel})
+        });
+        message.success("提交成功,三秒后刷新页面");
+        setTimeout(()=>{
+          location.reload()
+                },3000)
+
+      }catch(e){
+        message.error("请求失败，请检查当前网络后刷新后提交")
+      }
+    }
+    // this.setState({
+    //   isModalVisible:false
+    // })
+  };
 
   handleChange = (event)=>{
     this.setState({tel: event.target.value.trim()});
   }
 
   submit =  async () => {  
-    let res = await fetch(URL,{
-      method:"POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body:JSON.stringify({price,tel})
-  })
+   
   alert("提交成功，三秒后将会返回首页")
   }
   render(){
-    let {price} = this.state;
+    let {price,isModalVisible,isLoading} = this.state;
     return(
       <div className={styles.container}>
       <Head>
@@ -74,9 +96,14 @@ class Home extends Component{
       <main className={styles.main}>
       <Layout >
         <Header className={styles.header}>
-          <Image src={profilePic} alt="Picture of the author" width="40" height="40"/>
-          {/* <Search placeholder="蔡澜" className={styles.inputbox} /> */}
-
+          <Row>
+            <Col span={4}>
+              <Image src={profilePic} width={40} height={40}/>
+            </Col>
+            <Col span={20}>
+                <span className={styles.slogan}>达者为师，明鉴是岸</span>
+            </Col>
+          </Row>
         </Header>
       <Layout>
         <Content>
@@ -108,7 +135,7 @@ class Home extends Component{
           </div>
         </Carousel>
         <Layout className={styles.box}>
-          <h1 className={styles.tip}>猜你喜欢</h1>
+          <h1 className={styles.tip}>热门名师</h1>
           <Row gutter={16}>
           {likes.map(item=>(
             <Col span={12} key={item.id}>
@@ -135,11 +162,23 @@ class Home extends Component{
       
       <div className={styles.bottomBtn}>
         <Row gutter={16}>
-        <Col span={16}>
+        <Col span={14}>
            会员价 {price}
         </Col>
         <Col span={8}>
-        <Button type="primary" onClick={this.success}> 立即购买</Button>
+        <button onClick={this.showModal} className={styles.gold}> 立即购买</button>
+        <Modal visible={isModalVisible} 
+        onOk={this.handleOk} 
+        onCancel={this.handleCancel}
+        confirmLoading={isLoading}
+        okText="确认" cancelText="取消"
+        >
+        <p>感谢您参与本次模拟实验</p>
+          <Input value={this.state.tel}
+            placeholder="手机号码"
+            onChange={this.handleChange}/>
+          <p className={styles.notes}>请填写真实的手机号，产品上线后会赠予您一个月会员资格。</p>
+      </Modal>
         </Col>
         </Row>
       </div>
