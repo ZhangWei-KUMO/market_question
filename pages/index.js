@@ -4,7 +4,6 @@ import { Component } from 'react'
 import styles from '../styles/Home.module.css'
 import {Row,Col, Button } from 'antd';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
 import profilePic from '../public/demo.png'
 
 class Home extends Component{
@@ -28,10 +27,7 @@ class Home extends Component{
     }
   }
 
-  submit =  async () => {
-    const router = useRouter()
-    console.log(router.query);
-  
+  submit =  async () => {  
     const res = await fetch(`https://zhangwei-7gl977h782ef503e-1306346100.ap-shanghai.service.tcloudbase.com/rest-api/v1.0/quotation`)
     const data = await res.json();
    

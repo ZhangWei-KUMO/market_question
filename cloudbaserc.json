@@ -6,7 +6,7 @@
     "functions": [],
     "region": "ap-shanghai",
     "framework": {
-        "name": "react",
+        "name": "market",
         "plugins": {
             "react": {
                 "use": "@cloudbase/framework-plugin-website",
