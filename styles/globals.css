@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.ant-card-body {
+  padding: .5rem!important
+}

@@ -56,7 +56,7 @@ class Home extends Component{
       <Layout >
         <Header className={styles.header}>
           <Image src={profilePic} alt="Picture of the author" width="40" height="40"/>
-          <Search placeholder="蔡澜" className={styles.inputbox} />
+          {/* <Search placeholder="蔡澜" className={styles.inputbox} /> */}
 
         </Header>
       <Layout>
@@ -94,12 +94,16 @@ class Home extends Component{
           {likes.map(item=>(
             <Col span={12} key={item.id}>
               <div>
-              <Card hoverable
-                  style={{ width: 180 }}
-                   cover={<Image alt="example" src={item.cover}  width={400}
-                   height={240}/>}>
-            <Meta title={item.name} description={item.description} />
-  </Card>
+              <Card hoverable={true}
+                   className={styles.startcard}
+                   style={{marginBottom:12}}
+                   cover={<Image alt="example" src={item.cover} 
+                   className={styles.startimg}
+                    width={300}
+                   height={280}/>}>
+                     <h1>{item.name}</h1>
+                     <p>{item.description} </p>
+               </Card>
               </div>
             </Col>
           ))}
