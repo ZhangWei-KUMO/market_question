@@ -66,6 +66,7 @@ class Home extends Component{
            <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210702/162519484060de8158e4aa7.jpg"
              width={400}
              height={240}
+             alt="master1"
              className={styles.carouselimg}
            />
           </div>
@@ -73,6 +74,7 @@ class Home extends Component{
            <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210706/162554153660e3cba0463da.jpg"
                 width={400}
                 height={240}
+                alt="master2"
               className={styles.carouselimg}
 
            />
@@ -81,6 +83,7 @@ class Home extends Component{
            <Image src="http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210707/162562493560e51167d3392.jpg"
                width={400}
                height={240}
+               alt="master3"
               className={styles.carouselimg}
            />
           </div>
@@ -93,7 +96,8 @@ class Home extends Component{
               <div>
               <Card hoverable
                   style={{ width: 180 }}
-                   cover={<img alt="example" src={item.cover}/>}>
+                   cover={<Image alt="example" src={item.cover}  width={400}
+                   height={240}/>}>
             <Meta title={item.name} description={item.description} />
   </Card>
               </div>
