@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { Component } from 'react';
+import Script from 'next/script'
+
 import styles from '../styles/Video.module.css';
 
 let url = "https://daz-finalcut-1306346100.cos.ap-nanjing.myqcloud.com/%E8%B5%96%E5%A3%B0%E5%B7%9D/lsct1.mp4";
@@ -29,8 +31,8 @@ class Video extends Component{
         <div>
           <Head>
           <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.min.css" rel="stylesheet"/>
-            <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/libs/hls.min.0.13.2m.js"></script>
-            <script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.v4.2.1.min.js"></script>
+            <Script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/libs/hls.min.0.13.2m.js"></Script>
+            <Script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.v4.2.1.min.js"></Script>
           </Head>
           <div>
           <video id="zhangweivideo"
