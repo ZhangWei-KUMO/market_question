@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Component } from 'react';
-import Script from 'next/script'
 
 import styles from '../styles/Video.module.css';
 
@@ -23,16 +22,14 @@ class Video extends Component{
                 appID: "1500005956", // 请传入点播账号的子应用appID 必须
                 autoplay: true,
                 psign: ""
-              });
+              });       
     }
 
     render(){
         return(
         <div>
           <Head>
-          <link href="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.min.css" rel="stylesheet"/>
-            <Script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/libs/hls.min.0.13.2m.js"></Script>
-            <Script src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.v4.2.1.min.js"></Script>
+   
           </Head>
           <div>
           <video id="zhangweivideo"
