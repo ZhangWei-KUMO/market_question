@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import { Carousel,Row,Col, Layout, message,Input,Card,Modal } from 'antd';
 import profilePic from '../public/logo_white.png'
 import likes from '../public/data';
+import Link from 'next/link';
 
 const { Header, Content } = Layout;
 
@@ -109,29 +110,34 @@ class Home extends Component{
         <Content>
         <Carousel autoplay>
           <div className={styles.imgbox}>
+           <Link href="/video?id="><a>
            <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/7b78db2a3701925920591664619/gBo3yADRGgAA.jpg!P13166.jpg"
              width={400}
              height={240}
              alt="master1"
              className={styles.carouselimg}
            />
+           </a></Link>
           </div>
           <div className={styles.imgbox}>
+          <Link href="/video?id="><a>
            <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/7945b6683701925920591580728/6NJlajdmVdYA.jpg!P13166.jpg"
                 width={400}
                 height={240}
                 alt="master2"
               className={styles.carouselimg}
-
            />
+            </a></Link>
           </div>
           <div className={styles.imgbox}>
+          <Link href="/video?id="><a>
            <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/8cf2ccc43701925920581572247/4YnDjEjVV0kA.jpg!P13166.jpg"
                width={400}
                height={240}
                alt="master3"
               className={styles.carouselimg}
            />
+             </a></Link>
           </div>
         </Carousel>
         <Layout className={styles.box}>
@@ -139,18 +145,18 @@ class Home extends Component{
           <Row gutter={16}>
           {likes.map(item=>(
             <Col span={12} key={item.id}>
-              <div>
+               <Link href={`/video?id=${item.id}`}><a>
               <Card hoverable={true}
                    className={styles.startcard}
                    style={{marginBottom:12}}
                    cover={<Image alt="example" src={item.cover} 
                    className={styles.startimg}
-                    width={300}
+                   width={300}
                    height={280}/>}>
                      <h1>{item.name}</h1>
                      <p>{item.description} </p>
                </Card>
-              </div>
+               </a></Link>
             </Col>
           ))}
           </Row>
