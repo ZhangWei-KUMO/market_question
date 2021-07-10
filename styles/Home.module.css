@@ -122,3 +122,9 @@
   color: #c07d00!important;
   background: linear-gradient(to left, #d6ac59 , #ecce82)!important;
 }
+
+
+.video {
+  width: 100%;
+  height: 45vh;
+}

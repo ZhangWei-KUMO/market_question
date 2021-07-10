@@ -26,6 +26,15 @@ class Home extends Component{
   }
   
   componentDidMount(){
+    setTimeout(()=>{
+      var player = TCPlayer('zhangweivideo', { // player-container-id 为播放器容器 ID，必须与 html 中一致
+        fileID: '3701925920619699063', // 请传入需要播放的视频 fileID（必须）
+        appID: "1500005956", // 请传入点播账号的子应用appID 必须
+        autoplay: true,
+        psign: ""
+      });    
+    },500)
+ 
     let {price} = this.props.query;
     if(price){
       this.setState({
@@ -108,7 +117,14 @@ class Home extends Component{
         </Header>
       <Layout>
         <Content>
-        <Carousel autoplay>
+        <video id="zhangweivideo"
+           preload="auto"
+           className={styles.video}
+           playsInline 
+           webkitplaysinline="true" 
+            >
+          </video>
+        {/* <Carousel autoplay>
           <div className={styles.imgbox}>
            <Link href="/video?id="><a>
            <Image src="http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/7b78db2a3701925920591664619/gBo3yADRGgAA.jpg!P13166.jpg"
@@ -139,7 +155,7 @@ class Home extends Component{
            />
              </a></Link>
           </div>
-        </Carousel>
+        </Carousel> */}
         <Layout className={styles.box}>
           <h1 className={styles.tip}>热门名师</h1>
           <Row gutter={16}>
