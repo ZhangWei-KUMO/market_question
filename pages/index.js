@@ -122,7 +122,7 @@ class Home extends Component{
            className={styles.video}
            playsInline 
            webkitplaysinline="true" 
-           autoPlay={true}
+           autoPlay="true" 
             >
           </video>
         {/* <Carousel autoplay>
@@ -162,7 +162,7 @@ class Home extends Component{
           <Row gutter={16}>
           {likes.map(item=>(
             <Col span={12} key={item.id}>
-               <Link href={`/video?id=${item.id}`}><a>
+               {/* <Link href={`/video?id=${item.id}`}><a> */}
               <Card hoverable={true}
                    className={styles.startcard}
                    style={{marginBottom:12}}
@@ -173,7 +173,7 @@ class Home extends Component{
                      <h1>{item.name}</h1>
                      <p>{item.description} </p>
                </Card>
-               </a></Link>
+               {/* </a></Link> */}
             </Col>
           ))}
           </Row>
