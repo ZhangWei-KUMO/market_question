@@ -122,6 +122,7 @@ class Home extends Component{
            className={styles.video}
            playsInline 
            webkitplaysinline="true" 
+           autoPlay="true"
             >
           </video>
         {/* <Carousel autoplay>
