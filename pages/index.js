@@ -118,10 +118,10 @@ class Home extends Component{
       <Layout>
         <Content>
         <video id="zhangweivideo"
-           preload="auto"
+          //  preload="auto"
            className={styles.video}
-          //  playsInline 
-          //  webkitplaysinline="true" 
+           playsInline 
+           webkitplaysinline="true" 
             >
           </video>
         {/* <Carousel autoplay>
