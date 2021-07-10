@@ -28,9 +28,9 @@ class Home extends Component{
   componentDidMount(){
     setTimeout(()=>{
       var player = TCPlayer('zhangweivideo', { // player-container-id 为播放器容器 ID，必须与 html 中一致
-        fileID: '3701925920619699063', // 请传入需要播放的视频 fileID（必须）
+        fileID: '3701925920685841609', // 请传入需要播放的视频 fileID（必须）
         appID: "1500005956", // 请传入点播账号的子应用appID 必须
-        psign: "",
+        // psign: "",
         poster : "http://1306346100.vod2.myqcloud.com/58c725bavodcq1306346100/f18dea2f3701925920684951649/uSl0H791U9cA.png!P13166.jpg",
       });    
     },500)
