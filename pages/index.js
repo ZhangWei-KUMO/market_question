@@ -195,7 +195,7 @@ class Home extends Component{
         confirmLoading={isLoading}
         okText="确认" cancelText="取消"
         >
-        <p>感谢您参与本次模拟实验</p>
+        <p>感谢您参与本次模拟测试</p>
           <Input value={this.state.tel}
             placeholder="手机号码"
             onChange={this.handleChange}/>
