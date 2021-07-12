@@ -2,10 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Component } from 'react'
 import styles from '../styles/Home.module.css'
-import { Carousel,Row,Col, Layout, message,Input,Card,Modal } from 'antd';
+import { Row,Col, Layout, message,Input,Card,Modal } from 'antd';
 import profilePic from '../public/logo_white.png'
 import likes from '../public/data';
-import Link from 'next/link';
 
 const { Header, Content } = Layout;
 
