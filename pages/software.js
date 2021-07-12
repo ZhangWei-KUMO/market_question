@@ -29,7 +29,7 @@ class Software extends Component{
            <Row>
                <Col lg={6}>
                    <h1>Android客户端</h1>
-                   <Image width="200" height="200" src={Android}/>
+                   <Image width="200" height="200" src={Android} alt="1"/>
                </Col>
                <Col lg={6}>
                     <h1>iOS客户端</h1>
@@ -42,7 +42,7 @@ class Software extends Component{
            </Row>
            <h1>教程</h1>
            <p>打开软件，扫描下面二维码即可使用</p>
-           <Image width="200" height="200" src={Config}/>
+           <Image width="200" height="200" src={Config} alt="1"/>
            <p>MacOS系统可能由于系统限制的原因导致无法扫描二维码，可通过服务器设置--导入模式将下面URL导入进软件</p>
            <code>
            vmess://ewoidiI6ICIyIiwKInBzIjogIjIzM3YyLmNvbV8xMTkuMjguMTM2LjE1OSIsCiJhZGQiOiAiMTE5LjI4LjEzNi4xNTkiLAoicG9ydCI6ICIyNjA1MCIsCiJpZCI6ICIyN2U0MmQ1OC1iNzM5LTRkNWUtYTQ5ZC1iNTFlZGJkM2U3NWYiLAoiYWlkIjogIjAiLAoibmV0IjogInRjcCIsCiJ0eXBlIjogIm5vbmUiLAoiaG9zdCI6ICIiLAoicGF0aCI6ICIiLAoidGxzIjogIiIKfQo=
