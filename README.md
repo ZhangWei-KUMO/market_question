@@ -91,3 +91,8 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 
 1. 绑定密钥
 2. 加载密钥
+
+### FQA
+
+1. ubuntu@119.28.136.159: Permission denied (publickey).
+
