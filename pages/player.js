@@ -2,11 +2,11 @@ import Head from 'next/head';
 import { Component } from 'react';
 import dynamic from 'next/dynamic';
 import {
-  Row, Col, Layout,
+  Layout,
 } from 'antd';
 import styles from '../styles/Player.module.css';
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 const Player = dynamic(
   () => import('../components/player'),
@@ -38,19 +38,9 @@ class Home extends Component {
         </Head>
         <main className={styles.main}>
           <Layout>
-            <Header className={styles.header}>
-              <Row>
-                <Col span={4}>
-                  {/* <Image src={profilePic} width={40} height={40}/> */}
-                </Col>
-                <Col span={20} />
-              </Row>
-            </Header>
-            <Layout>
-              <Content>
-                <Player id={id} />
-              </Content>
-            </Layout>
+            <Content>
+              <Player id={id} />
+            </Content>
           </Layout>
         </main>
       </div>
