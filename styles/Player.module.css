@@ -23,3 +23,8 @@
 .text {
   margin-top: 2rem;
 }
+
+.video {
+  width: 100%;
+  height: 85vh;
+}
