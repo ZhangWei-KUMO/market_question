@@ -1,0 +1,7 @@
+@hostname = https://dazv2-9ggkxo9w26cfe2a9-1306346100.ap-shanghai.app.tcloudbase.com
+@contentType = application/json
+
+### 获取首页模块显示状态
+
+GET {{hostname}}/ws-api
+Content-Type: application/json
