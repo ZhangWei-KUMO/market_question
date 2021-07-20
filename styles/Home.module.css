@@ -1,6 +1,7 @@
 
 .bannerContainer{
   padding:30px 0;
+  margin-top: 70px;
 }
 
 .bannerBox {
@@ -32,6 +33,7 @@
   height:342px;
   position: relative;
   margin:0 24px 24px 0;
+  background-color: #fff;
 }
 
 .cardImage {
@@ -41,4 +43,25 @@
 .cardText {
   padding:0 20px;
   color: rgb(37, 37, 37);
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 180px;
+  box-shadow: 0 6px 10px 0 rgb(95 101 105 / 15%);
+  overflow: hidden;
+  margin:30px auto;
+}
+
+.circleImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+} 
+
+.hotblock h3 {
+  text-align: center;
+  margin-bottom: 10px;
 }

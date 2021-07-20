@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Row, Col, Tag } from 'antd';
 import Link from 'next/link';
+import FixHeader from '../components/fixheader';
 import homeAd from '../public/homepage_ad.png';
 import styles from '../styles/Home.module.css';
 import API_HOST from '../utils/config';
@@ -37,6 +38,7 @@ class Home extends Component {
         <Head>
           <title>答岸——全球首家华人大师线上课程平台</title>
         </Head>
+        <FixHeader />
         <div className={styles.bannerContainer}>
           <div className={styles.bannerBox}>
             <Image src={homeAd} height={582} width={480} />
@@ -120,25 +122,25 @@ class Home extends Component {
             <Row>
               {HotTeachers.map((item) => (
                 <Col lg={6} key={item.key}>
-                  <div className={styles.card}>
-                    <Link href={`/player?id${item.id}`}>
-                      <a href="true">
-                        <Image
-                          src={item.image}
-                          height={270}
-                          width={312}
-                          className={styles.cardImage}
-                        />
-                        <div className={styles.cardText}>
-                          <h3>{item.name}</h3>
-                          <p>从0到1，中国高尔夫的突破</p>
-                          {item.types.map((j, k) => (
-                            <Tag key={j} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
-                          ))}
-                        </div>
-                      </a>
-
-                    </Link>
+                  <div className={styles.hotblock}>
+                    <div className={styles.circle}>
+                      <Link href={`/player?id${item.id}`}>
+                        <a href="true">
+                          <Image
+                            src={item.image}
+                            height={225}
+                            width={225}
+                            className={styles.circleImage}
+                          />
+                        </a>
+                      </Link>
+                    </div>
+                    <h3>{item.name}</h3>
+                    <center>
+                      {item.types.map((j) => (
+                        <Tag key={j}>{j}</Tag>
+                      ))}
+                    </center>
                   </div>
                 </Col>
               ))}
