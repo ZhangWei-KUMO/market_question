@@ -11,6 +11,34 @@
   box-shadow: 0 6px 10px 0 rgb(95 101 105 / 45%)
 }
 
+.containerBox {
+  width: 1200px;
+  margin:0px auto;
+  padding:50px 0;
+}
 .video {
   height: 582px;
+}
+
+.gray {
+  background-color: #f5f7fa;
+  min-height: 400px;
+}
+
+.card {
+  box-shadow: 0 6px 10px 0 rgb(95 101 105 / 15%);
+  border-radius:12px;
+  width: 270px;
+  height:342px;
+  position: relative;
+  margin:0 24px 24px 0;
+}
+
+.cardImage {
+  border-radius: 12px 12px 0 0;
+}
+
+.cardText {
+  padding:0 20px;
+  color: rgb(37, 37, 37);
 }
