@@ -1,24 +1,24 @@
-import got from 'got'
+import got from 'got';
 import parser from 'ua-parser-js';
 
-const URL = "https://zhangwei-7gl977h782ef503e-1306346100.ap-shanghai.service.tcloudbase.com/rest-api/v1.0/quotation"
+const URL = 'https://zhangwei-7gl977h782ef503e-1306346100.ap-shanghai.service.tcloudbase.com/rest-api/v1.0/quotation';
 
 async function handler(req, res) {
-  if(req.method === "POST"){
-    var ua = parser(req.headers['user-agent']);
-    let object = req.body;
+  if (req.method === 'POST') {
+    const ua = parser(req.headers['user-agent']);
+    const object = req.body;
     object.clientinfo = ua;
     object.timestamp = new Date();
-    const response = await got.post(URL,{
+    const response = await got.post(URL, {
       json: {
-        data:[
-          object
-        ]
+        data: [
+          object,
+        ],
       },
-      responseType: 'json'
+      responseType: 'json',
     });
-      
-    res.json({sucess:true})
+
+    res.json({ sucess: true });
   }
 }
 

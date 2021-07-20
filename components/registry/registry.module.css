@@ -1,0 +1,41 @@
+.noticeText {
+    height: 10px;
+    color: red;
+}
+
+.title {
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    font-size: 1.1rem;
+    border-radius: 40px;
+}
+
+.back{
+    text-align: center;
+    font-size: 1rem;
+    margin:20px 0;
+}
+
+.back a {
+    color: red;
+}
+
+.back a:hover {
+    color: red;
+}
+
+.input {
+    background-color: #f4f4f4;
+    border:none;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.input:focus{
+    outline: none; 
+}
+

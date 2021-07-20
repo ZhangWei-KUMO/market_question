@@ -1,64 +1,37 @@
-import React, {
-  useState, useCallback, useMemo, useRef,
-} from 'react';
-import useWebSocket, { ReadyState } from 'react-use-websocket';
+import cloudbase from '@cloudbase/js-sdk';
+import { Component } from 'react';
 
-const WebSocketDemo = () => {
-  // Public API that will echo messages sent to it back to the client
-  const [socketUrl, setSocketUrl] = useState('wss://echo.websocket.org');
-  const messageHistory = useRef([]);
+class Mail extends Component {
+  componentDidMount() {
+    const app = cloudbase.init({
+      env: 'dazv2-9ggkxo9w26cfe2a9',
+      credentials: require('../tcb_login.json'),
+    });
 
-  const {
-    sendMessage,
-    lastMessage,
-    readyState,
-  } = useWebSocket(socketUrl);
+    const db = app.database();
+    // 用户显式退出或更改密码之前的30天一直有效
+    // const auth = app.auth({
+    //   persistence: 'local',
+    // });
+    const watcher = db
+      .collection('users')
+      .where({
+        name: 'zhangwei1988',
+      }).watch({
+        onChange(snapshot) {
+          console.log('snapshot', snapshot);
+        },
+        onError(err) {
+          throw new Error(err.toString());
+        },
+      });
+  }
 
-  messageHistory.current = useMemo(() => messageHistory.current.concat(lastMessage), [lastMessage]);
+  render() {
+    return (
+      <div>Mail</div>
+    );
+  }
+}
 
-  const handleClickChangeSocketUrl = useCallback(() => setSocketUrl('wss://demos.kaazing.com/echo'), []);
-
-  const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
-
-  const connectionStatus = {
-    [ReadyState.CONNECTING]: 'Connecting',
-    [ReadyState.OPEN]: 'Open',
-    [ReadyState.CLOSING]: 'Closing',
-    [ReadyState.CLOSED]: 'Closed',
-    [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
-  }[readyState];
-
-  return (
-    <div>
-      <button
-        onClick={handleClickChangeSocketUrl}
-      >
-        Click Me to change Socket Url
-      </button>
-      <button
-        onClick={handleClickSendMessage}
-        disabled={readyState !== ReadyState.OPEN}
-      >
-        Click Me to send 'Hello'
-      </button>
-      <span>
-        The WebSocket is currently
-        {' '}
-        {connectionStatus}
-      </span>
-      {lastMessage ? (
-        <span>
-          Last message:
-          {' '}
-          {lastMessage.data}
-        </span>
-      ) : null}
-      <ul>
-        {/* {messageHistory.current
-          .map((message, idx) => <span key={idx}>{message.data}</span>)} */}
-      </ul>
-    </div>
-  );
-};
-
-export default WebSocketDemo;
+export default Mail;
