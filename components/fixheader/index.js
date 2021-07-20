@@ -23,37 +23,37 @@ export default function FixHeader({ props }) {
         </div>
         <div className={styles.items}>
           <li>
-            <Link href="/html/">
+            <Link href="/">
               <a href="true">首页</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/classification/movie">
               <a href="true">电影电视</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/classification/business">
               <a href="true">商业社会</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/classification/sports">
               <a href="true">体育竞技</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/free">
               <a href="true">免费试看</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/column">
               <a href="true">专栏</a>
             </Link>
           </li>
           <li>
-            <Link href="/html/">
+            <Link href="/note">
               <a href="true">手记</a>
             </Link>
           </li>
