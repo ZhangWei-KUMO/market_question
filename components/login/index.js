@@ -1,4 +1,4 @@
-import cloudbase from '@cloudbase/js-sdk';
+// import cloudbase from '@cloudbase/js-sdk';
 import { Component } from 'react';
 
 class LoginPage extends Component {

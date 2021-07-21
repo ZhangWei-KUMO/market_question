@@ -1,4 +1,4 @@
-import cloudbase from '@cloudbase/js-sdk';
+// import cloudbase from '@cloudbase/js-sdk';
 import { Component } from 'react';
 import Registry from '../components/registry';
 

@@ -12,9 +12,8 @@ import Flag from '../../public/flag-bg.png';
 
 function Help({ master }) {
   const {
-    title, achieve, author, intro, roles, list, cover, head, num,
+    title, achieve, author, intro, roles, cover, head, num,
   } = master;
-  console.log(list);
   return (
     <>
       <Head>

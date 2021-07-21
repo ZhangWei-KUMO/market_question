@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable global-require */
 import cloudbase from '@cloudbase/js-sdk';
 import { Component } from 'react';
 
@@ -19,7 +21,6 @@ class Mail extends Component {
         name: 'zhangwei1988',
       }).watch({
         onChange(snapshot) {
-          console.log('snapshot', snapshot);
         },
         onError(err) {
           throw new Error(err.toString());
