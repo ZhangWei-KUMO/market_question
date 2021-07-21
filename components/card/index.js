@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Tag } from 'antd';
 import styles from './Card.module.css';
 
 function Card({
@@ -17,7 +16,7 @@ function Card({
       <div className={styles.cardText}>
         <h3>{name}</h3>
         <p>{title}</p>
-        {types.map((j, k) => (
+        {types.map((j) => (
           <span key={j} className={styles.tag}>{j}</span>
         ))}
       </div>

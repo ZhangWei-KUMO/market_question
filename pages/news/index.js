@@ -28,18 +28,39 @@ function NewsList({ items }) {
           <div key={item._id} className={styles.bar}>
             <a href={`/news/${item._id}`}>
               <div className={styles.content}>
-                <div className={styles.left}>
-                  <div className={styles.imageBox}>
-                    <Image src={item.cover} layout="fixed" width={350} height={400} />
-                  </div>
-                </div>
-                <div className={styles.text}>
+                {key % 2 === 0 ? (
                   <div>
-                    <h2>NEWSROOM</h2>
-                    <h1>{item.title}</h1>
-                    <p>{moment(item.publish_data).format('YYYY-MM-DD')}</p>
+                    <div className={styles.text}>
+                      <div>
+                        <h2>NEWSROOM</h2>
+                        <h1>{item.title}</h1>
+                        <p>{moment(item.publish_data).format('YYYY-MM-DD')}</p>
+                      </div>
+                    </div>
+                    <div className={styles.left}>
+                      <div className={styles.imageBox}>
+                        <Image src={item.cover} layout="fixed" width={350} height={400} />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                )
+                  : (
+                    <div>
+                      <div className={styles.left}>
+                        <div className={styles.imageBox}>
+                          <Image src={item.cover} layout="fixed" width={350} height={400} />
+                        </div>
+                      </div>
+                      <div className={styles.text}>
+                        <div>
+                          <h2>NEWSROOM</h2>
+                          <h1>{item.title}</h1>
+                          <p>{moment(item.publish_data).format('YYYY-MM-DD')}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
               </div>
             </a>
 

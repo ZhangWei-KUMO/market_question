@@ -87,11 +87,11 @@ Help.getInitialProps = async (ctx) => {
       num: slug,
     },
   });
-  const json2 = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
-    query: {
-      num: slug,
-    },
-  });
+  // const json2 = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
+  //   query: {
+  //     num: slug,
+  //   },
+  // });
   return { master: json.data[0] };
 };
 
