@@ -103,16 +103,14 @@ class Home extends Component {
                 <Col lg={6} key={item._id}>
                   <div className={styles.hotblock}>
                     <div className={styles.circle}>
-                      <Link href={`/teacher/${item.id}`}>
-                        <a href="true">
-                          <Image
-                            src={item.image}
-                            height={225}
-                            width={225}
-                            className={styles.circleImage}
-                          />
-                        </a>
-                      </Link>
+                      <a href={`/teacher/${item.id}`}>
+                        <Image
+                          src={item.image}
+                          height={225}
+                          width={225}
+                          className={styles.circleImage}
+                        />
+                      </a>
                     </div>
                     <h3>{item.name}</h3>
                     <center>
