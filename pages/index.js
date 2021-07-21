@@ -13,7 +13,7 @@ import styles from '../styles/Home.module.css';
 import API_HOST from '../utils/config';
 import Card from '../components/card';
 
-const URL = 'http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210721/162684890960f7be8dea44b.mp4';
+const URL = 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210721/162684890960f7be8dea44b.mp4';
 class Home extends Component {
   static async getInitialProps() {
     try {
