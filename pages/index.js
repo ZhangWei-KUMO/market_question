@@ -46,7 +46,7 @@ class Home extends Component {
         <div className={styles.bannerContainer}>
           <div className={styles.bannerBox}>
             <Image src={homeAd} height={582} width={480} />
-            <video src={URL} muted autoPlay autoSave="true" loop className={styles.video} preload="none" />
+            <video src={URL} muted autoPlay loop className={styles.video} preload="none" />
           </div>
         </div>
         <div className={styles.gray}>

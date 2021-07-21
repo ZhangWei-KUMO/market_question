@@ -9,3 +9,11 @@ ssh-keygen -R 119.45.101.220
 2. raw.githubusercontent.com被墙
 
 https://www.ipaddress.com/查询真实地址
+
+
+3. 端口被占
+
+```bash
+sudo lsof -t -i:3000
+sudo kill -9 [PID]
+```
