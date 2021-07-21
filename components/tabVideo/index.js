@@ -17,7 +17,7 @@ function TabVideo({ FreeItems }) {
               </div>
 )}
           >
-            <video src={item.url} className={styles.tabvideo} autoPlay controls muted />
+            <video src={item.url} className={styles.tabvideo} autoPlay controls muted preload="none" />
           </TabPane>
         ))}
 
