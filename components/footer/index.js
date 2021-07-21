@@ -1,12 +1,10 @@
-import Image from 'next/image';
 import {
-  Row, Col, Tag, Divider,
+  Row, Col, Divider,
 } from 'antd';
 import Link from 'next/link';
 import styles from './Footer.module.css';
-import HeadLogo from '../../public/headLogo.png';
 
-export default function Footer({ props }) {
+export default function Footer() {
   return (
     <div className={styles.footer}>
       <Divider />
