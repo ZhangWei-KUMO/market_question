@@ -9,7 +9,7 @@ async function handler(req, res) {
     const object = req.body;
     object.clientinfo = ua;
     object.timestamp = new Date();
-    const response = await got.post(URL, {
+    await got.post(URL, {
       json: {
         data: [
           object,

@@ -4,9 +4,9 @@ import Registry from '../components/registry';
 
 class Mail extends Component {
   componentDidMount() {
-    const app = cloudbase.init({
-      env: 'dazv2-9ggkxo9w26cfe2a9',
-    });
+    // const app = cloudbase.init({
+    //   env: 'dazv2-9ggkxo9w26cfe2a9',
+    // });
   }
 
   render() {

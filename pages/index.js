@@ -71,7 +71,7 @@ class Home extends Component {
                           <h3>{item.title}</h3>
                           <p>{item.name}</p>
                           {item.types.map((j, k) => (
-                            <Tag key={k} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
+                            <Tag key={j} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
                           ))}
                         </div>
                       </a>
