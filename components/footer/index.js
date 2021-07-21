@@ -12,6 +12,8 @@ export default function Footer() {
         <Row>
           <Col lg={4}>
             <ul>
+              <h4>协议</h4>
+
               <li>
                 <Link href="/help/userAgreement">
                   <a href="true">
@@ -37,6 +39,7 @@ export default function Footer() {
           </Col>
           <Col lg={4}>
             <ul>
+              <h4>关于</h4>
               <li>
                 <Link href="/help/aboutus">
                   <a href="true">
@@ -55,9 +58,16 @@ export default function Footer() {
           </Col>
         </Row>
         <p>
-          Copyright © 2021 DaZ Master All Rights Reserved |
-          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">京ICP备2021007143号-1 </a>
-          京公网安备11010802030151号
+          Copyright ©
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+          苏州云帧数浪信息科技有限公司 版权所有
+          {' '}
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+            苏ICP备19027707号-1
+          </a>
+
         </p>
       </div>
 

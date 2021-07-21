@@ -33,33 +33,13 @@ export default function FixHeader() {
             </Link>
           </li>
           <li>
-            <Link href="/classification/movie">
-              <a href="true">电影电视</a>
+            <Link href="/classification">
+              <a href="true">分类</a>
             </Link>
           </li>
           <li>
-            <Link href="/classification/business">
-              <a href="true">商业社会</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/classification/sports">
-              <a href="true">体育竞技</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/free">
-              <a href="true">免费试看</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/column">
-              <a href="true">专栏</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/note">
-              <a href="true">手记</a>
+            <Link href="/news">
+              <a href="true">新闻室</a>
             </Link>
           </li>
         </div>

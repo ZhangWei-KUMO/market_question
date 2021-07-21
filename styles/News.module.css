@@ -1,0 +1,96 @@
+.pagename {
+  text-align: center;
+  height: 200px;
+}
+
+.container {
+  min-height: 1200px;
+  background-color: #000;
+  color: #fff;
+  padding-top: 120px;
+}
+
+.container h1 {
+  color: #fff;
+}
+
+.bar {
+  background-color: rgb(41, 41, 41);
+  color: #fff;
+  height: 400px;
+  margin-bottom: 100px;
+}
+
+.bar .content {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.bar .content .left {
+  flex-shrink: 3
+}
+
+.bar .content .text {
+  flex-shrink: 3;
+  padding:40px;
+  
+}
+
+.bar h2 {
+  color: rgb(70, 70, 70);
+  font-size: 3rem;
+}
+
+
+.bar h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.bar a {
+  color: #fff;
+}
+
+.bar p {
+  font-size: 1.2rem;
+  margin-top: 100px;
+}
+
+.imageBox {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin-top: -100px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.artical {
+  background-color: #000;
+  color: #fff;
+  margin: 0 auto;  
+  margin-top: 150px;
+  width: 700px;
+}
+
+.artical h1 {
+  color: rgb(214, 214, 214);
+  font-size: 2.2rem;
+}
+
+.artical h4 {
+  color: rgb(219, 219, 219);
+}
+
+.artical p {
+  font-size: 1.1rem;
+  color: rgb(161, 161, 161);
+}
+
+.artical img {
+  max-width: 100%;
+  display: block;
+  margin:0 auto;
+  /* margin-left: -15%; */
+}

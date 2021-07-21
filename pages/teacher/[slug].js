@@ -9,16 +9,18 @@ import styles from '../../styles/Teacher.module.css';
 import FixHeader from '../../components/fixheader';
 import request from '../../utils/request';
 import Flag from '../../public/flag-bg.png';
+import Footer from '../../components/footer';
 
 function Help({ master }) {
   const {
-    title, achieve, author, intro, roles, cover, head, num,
+    achieve, author, intro, roles, cover, head, num,
   } = master;
   return (
     <>
       <Head>
         <title>
-          {title}
+          {author}
+          {' '}
           |答岸
         </title>
         <meta name="description" content="全球首个华人大师平台" />
@@ -71,13 +73,21 @@ function Help({ master }) {
         </div>
 
       </div>
+      <Footer />
+
     </>
   );
 }
 
 Help.getInitialProps = async (ctx) => {
   const { slug } = ctx.query;
+  // 根据大师id请求大师个人信息
   const json = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
+    query: {
+      num: slug,
+    },
+  });
+  const json2 = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
     query: {
       num: slug,
     },

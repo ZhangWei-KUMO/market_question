@@ -4,6 +4,7 @@ import Head from 'next/head';
 import API_HOST from '../../utils/config';
 import styles from '../../styles/Home.module.css';
 import FixHeader from '../../components/fixheader';
+import Footer from '../../components/footer';
 
 const mapid = {
   userAgreement: '79550af260f69267281401a30f3b296a',
@@ -26,11 +27,13 @@ function Help({ artical }) {
       </Head>
       <FixHeader />
       <div className={styles.textContainer}>
-        <h1>{title}</h1>
+        <h1 className={styles.agreeTitle}>{title}</h1>
         <div>
           <html dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </div>
+      <Footer />
+
     </>
   );
 }

@@ -1,11 +1,35 @@
 html,
 body {
+  background-color: #000!important;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1 {
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+}
+
+h3 {
+  color: #fff;
+}
+
+h4 {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+
+ol {
+  color: #fff;
+}
 a {
   color: inherit;
   text-decoration: none;

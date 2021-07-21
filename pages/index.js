@@ -3,7 +3,7 @@
 import { Component } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Row, Col, Tag } from 'antd';
+import { Row, Col } from 'antd';
 import Link from 'next/link';
 import TabVideo from '../components/tabVideo';
 import FixHeader from '../components/fixheader';
@@ -11,9 +11,7 @@ import Footer from '../components/footer';
 import homeAd from '../public/homepage_ad.png';
 import styles from '../styles/Home.module.css';
 import API_HOST from '../utils/config';
-import HotIcon from '../public/hot_icon.png';
-import TopIcon from '../public/top_icon.png';
-import LineIcon from '../public/line_icon.png';
+import Card from '../components/card';
 
 const URL = 'http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210721/162684890960f7be8dea44b.mp4';
 class Home extends Component {
@@ -51,42 +49,30 @@ class Home extends Component {
         </div>
         <div className={styles.gray}>
           <div className={styles.containerBox}>
-            <h2>
-              <Image src={TopIcon} height={30} width={50} />
+            <h2 className={styles.title}>
               猜你喜欢
             </h2>
             <Row>
               {Recoms.map((item) => (
                 <Col lg={6} key={item._id}>
-                  <div className={styles.card}>
-                    <Link href={`/player?id${item.id}`}>
-                      <a href="true">
-                        <Image
-                          src={item.image}
-                          height={270}
-                          width={312}
-                          className={styles.cardImage}
-                        />
-                        <div className={styles.cardText}>
-                          <h3>{item.title}</h3>
-                          <p>{item.name}</p>
-                          {item.types.map((j, k) => (
-                            <Tag key={j} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
-                          ))}
-                        </div>
-                      </a>
-
-                    </Link>
-                  </div>
+                  <Link href={`/player?id${item.id}`}>
+                    <a href="true">
+                      <Card
+                        title={item.title}
+                        image={item.image}
+                        types={item.types}
+                        name={item.name}
+                      />
+                    </a>
+                  </Link>
                 </Col>
               ))}
             </Row>
           </div>
         </div>
-        <div>
+        <div className={styles.gray}>
           <div className={styles.containerBox}>
-            <h2>
-              <Image src={LineIcon} height={30} width={50} />
+            <h2 className={styles.title}>
               免费试看
             </h2>
             <TabVideo FreeItems={FreeItems} />
@@ -94,8 +80,7 @@ class Home extends Component {
         </div>
         <div className={styles.gray}>
           <div className={styles.containerBox}>
-            <h2>
-              <Image src={HotIcon} height={30} width={50} />
+            <h2 className={styles.title}>
               热门名师
             </h2>
             <Row>
@@ -115,7 +100,7 @@ class Home extends Component {
                     <h3>{item.name}</h3>
                     <center>
                       {item.types.map((j) => (
-                        <Tag key={j}>{j}</Tag>
+                        <div className={styles.tag} key={j}>{j}</div>
                       ))}
                     </center>
                   </div>

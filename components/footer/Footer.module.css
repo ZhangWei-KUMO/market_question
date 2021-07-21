@@ -1,7 +1,15 @@
 .footer {
-    background-color: #fff;
+    background-color: #181818;
     color: #646464;
     padding-top: 40px;
+}
+
+.footer a{
+    color: #646464;
+}
+
+.footer h4 {
+    color: #fff;
 }
 
 .footer li {
