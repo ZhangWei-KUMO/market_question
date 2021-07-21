@@ -2,7 +2,6 @@
 import '../styles/globals.css';
 import Script from 'next/script';
 import Head from 'next/head';
-import Footer from '../components/footer';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -18,7 +17,6 @@ function MyApp({ Component, pageProps }) {
       <Script async src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/libs/hls.min.0.13.2m.js" />
       <Script async src="https://web.sdk.qcloud.com/player/tcplayer/release/v4.2.1/tcplayer.v4.2.1.min.js" />
       <Component {...pageProps} />
-      <Footer />
     </div>
   );
 }

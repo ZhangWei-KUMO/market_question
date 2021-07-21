@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import cloudbase from '@cloudbase/js-sdk';
 import { Component } from 'react';
 import Link from 'next/link';
@@ -15,7 +16,6 @@ class Registry extends Component {
     super(props);
     this.state = {
       area: '86',
-      isModalVisible: true,
       isAgree: null,
       phone: '',
       captch: '',
@@ -37,14 +37,12 @@ class Registry extends Component {
     });
   }
 
+  // 关闭弹窗
   handleCancel() {
-    this.setState({
-      isModalVisible: false,
-    });
+    this.props.switchState(false);
   }
 
   handlePhone(e) {
-    console.log(e.target.value);
     this.setState({
       phone: e.target.value,
     });
@@ -66,7 +64,6 @@ class Registry extends Component {
 
   onCheck() {
     const { isAgree } = this.state;
-
     this.setState({
       isAgree: !isAgree,
     });
@@ -80,20 +77,16 @@ class Registry extends Component {
     });
   }
 
-  //   sendCaptch() {
-
-  //   }
-
   render() {
     const {
-      isModalVisible, isAgree, phone, captch, password, count, area, isValidePhone,
+      isAgree, phone, captch, password, count, area, isValidePhone,
     } = this.state;
+    const { registryState } = this.props;
     return (
       <div>
-        <div>xxxx</div>
         <Modal
           width={400}
-          visible={isModalVisible}
+          visible={registryState}
           onCancel={this.handleCancel}
           footer={null}
           style={{ borderRadius: '30px' }}
@@ -136,7 +129,7 @@ class Registry extends Component {
             </div>
           </Input.Group>
           <p className={styles.noticeText}>
-            请输入正确验证码
+            {/* 请输入正确验证码 */}
           </p>
           <Input.Password placeholder="请设置您的密码" size="large" value={password} onChange={this.handlePwd} />
           <p className={styles.noticeText}>

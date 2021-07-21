@@ -7,6 +7,7 @@ import { Row, Col, Tag } from 'antd';
 import Link from 'next/link';
 import TabVideo from '../components/tabVideo';
 import FixHeader from '../components/fixheader';
+import Footer from '../components/footer';
 import homeAd from '../public/homepage_ad.png';
 import styles from '../styles/Home.module.css';
 import API_HOST from '../utils/config';
@@ -20,7 +21,7 @@ class Home extends Component {
     try {
       const resRecom = await fetch(`${API_HOST}/recommendation?limit=8`);
       const resHotTeachers = await fetch(`${API_HOST}/hot_teachers?limit=8`);
-      const resFreeList = await fetch(`${API_HOST}/free_list?limit=8`);
+      const resFreeList = await fetch(`${API_HOST}/free_list?limit=5`);
       const RecomJSON = await resRecom.json();
       const HotTeacherJSON = await resHotTeachers.json();
       const FreeItemJSON = await resFreeList.json();
@@ -70,7 +71,7 @@ class Home extends Component {
                           <h3>{item.title}</h3>
                           <p>{item.name}</p>
                           {item.types.map((j, k) => (
-                            <Tag key={j} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
+                            <Tag key={k} color={k === 0 ? '#f50' : '#2db7f5'}>{j}</Tag>
                           ))}
                         </div>
                       </a>
@@ -88,7 +89,7 @@ class Home extends Component {
               <Image src={LineIcon} height={30} width={50} />
               免费试看
             </h2>
-            <TabVideo />
+            <TabVideo FreeItems={FreeItems} />
           </div>
         </div>
         <div className={styles.gray}>
@@ -99,10 +100,10 @@ class Home extends Component {
             </h2>
             <Row>
               {HotTeachers.map((item) => (
-                <Col lg={6} key={item.key}>
+                <Col lg={6} key={item._id}>
                   <div className={styles.hotblock}>
                     <div className={styles.circle}>
-                      <Link href={`/teacher/${item._id}`}>
+                      <Link href={`/teacher/${item.id}`}>
                         <a href="true">
                           <Image
                             src={item.image}
@@ -125,6 +126,7 @@ class Home extends Component {
             </Row>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

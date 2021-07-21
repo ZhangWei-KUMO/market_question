@@ -1,20 +1,20 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/html-has-lang */
 import Head from 'next/head';
+import Image from 'next/image';
+import { Button } from 'antd';
+import Link from 'next/link';
 import API_HOST from '../../utils/config';
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/Teacher.module.css';
 import FixHeader from '../../components/fixheader';
+import request from '../../utils/request';
+import Flag from '../../public/flag-bg.png';
 
-const mapid = {
-  userAgreement: '79550af260f69267281401a30f3b296a',
-  aboutus: '28ee4e3e60f697052c0e592d5023c79a',
-  privacyPolicy: 'cbddf0af60f6973d182a488744caafb5',
-  purchaseAgreement: 'cbddf0af60f6977f182a56af0fbffe21',
-  automaticRenewalAgreement: '79550af260f697cf28155fab67b26d1a',
-};
-
-function Help({ artical }) {
-  const { title, content } = artical;
+function Help({ master }) {
+  const {
+    title, achieve, author, intro, roles, list, cover, head, num,
+  } = master;
+  console.log(list);
   return (
     <>
       <Head>
@@ -25,11 +25,52 @@ function Help({ artical }) {
         <meta name="description" content="全球首个华人大师平台" />
       </Head>
       <FixHeader />
-      <div className={styles.textContainer}>
-        <h1>{title}</h1>
-        <div>
-          <html dangerouslySetInnerHTML={{ __html: content }} />
+      <div>
+        <div
+          className={styles.cover}
+          style={{
+            background: `url(${cover})`,
+            backgroundPosition: 'center',
+            backgroundSize: '100%',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className={styles.mask}>
+            <div className={styles.masterBox}>
+              <div className={styles.masterHeadBox}>
+                <Image
+                  src={head}
+                  className={styles.masterHead}
+                  height={185}
+                  width={190}
+                />
+              </div>
+              <div className={styles.redFlag}>
+                <center>
+                  <p>答岸特邀大师</p>
+                  <Image
+                    src={Flag}
+                    height={55}
+                    width={230}
+                  />
+                </center>
+              </div>
+              <h1>{author}</h1>
+              <p>{roles}</p>
+              <p>
+                主要成就：
+                {achieve}
+              </p>
+              <p>{intro}</p>
+              <Link href={`/player?id=${num}`}>
+                <a href="true">
+                  <Button type="danger">开始课程</Button>
+                </a>
+              </Link>
+            </div>
+          </div>
         </div>
+
       </div>
     </>
   );
@@ -37,9 +78,12 @@ function Help({ artical }) {
 
 Help.getInitialProps = async (ctx) => {
   const { slug } = ctx.query;
-  const res = await fetch(`${API_HOST}/helps/${mapid[slug]}`);
-  const json = await res.json();
-  return { artical: json.data };
+  const json = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
+    query: {
+      num: slug,
+    },
+  });
+  return { master: json.data[0] };
 };
 
 export default Help;

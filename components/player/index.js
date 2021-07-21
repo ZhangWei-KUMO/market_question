@@ -118,14 +118,12 @@ class Player extends Component {
       <div className={styles.bc}>
         <div className={styles.sidebar}>
           <div className={styles.item}>
-            <Link href="/">
-              <a href="true">
-                <div>
-                  <LeftOutlined style={{ fontSize: '24px' }} />
-                </div>
-                返回
-              </a>
-            </Link>
+            <a href="true">
+              <div>
+                <LeftOutlined style={{ fontSize: '24px' }} />
+              </div>
+              返回
+            </a>
           </div>
           <div className={styles.item} onClick={() => this.onChangeList()} role="button">
             <div>

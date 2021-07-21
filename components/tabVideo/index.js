@@ -4,27 +4,27 @@ import styles from './tabVideo.module.css';
 
 const { TabPane } = Tabs;
 
-class TabVideo extends Component {
-  state = {
-    tabPosition: 'right',
-  };
-
-  changeTabPosition = e => {
-    this.setState({ tabPosition: e.target.value });
-  };
-
-  render() {
-    const { tabPosition } = this.state;
-    return (
-      <>
-        <Tabs tabPosition="right">
-          <TabPane tab={<div><p>h</p><p>ss</p></div>} key="1">
-            <video src={``} className={styles.tabvideo}/>
+function TabVideo({ FreeItems }) {
+  return (
+    <>
+      <Tabs tabPosition="right">
+        {FreeItems.map((item) => (
+          <TabPane
+            key={item.title}
+            tab={(
+              <div>
+                <p className={styles.title}>{item.title}</p>
+                <p>{item.name}</p>
+              </div>
+)}
+          >
+            <video src={item.url} className={styles.tabvideo} autoPlay controls muted />
           </TabPane>
-        </Tabs>
-      </>
-    );
-  }
+        ))}
+
+      </Tabs>
+    </>
+  );
 }
 
-export default TabVideo
+export default TabVideo;

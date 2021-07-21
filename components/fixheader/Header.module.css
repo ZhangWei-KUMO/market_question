@@ -52,3 +52,23 @@
 .items li a {
     color: #555555;
 }
+
+.right {
+    width: 300px;
+    float: right;
+}
+
+.right li {
+    float: left;
+    width: auto;
+    padding:0 10px;
+    height: 50px;
+    list-style:none;
+    line-height: 70px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.right li a {
+    color: #555555;
+}

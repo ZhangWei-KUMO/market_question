@@ -1,10 +1,15 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import { useState } from 'react';
 import Image from 'next/image';
-import { Row, Col, Tag } from 'antd';
 import Link from 'next/link';
 import styles from './Header.module.css';
 import HeadLogo from '../../public/headLogo.png';
+import Registry from '../registry';
 
-export default function FixHeader({ props }) {
+export default function FixHeader() {
+  const [registryState, setRegistry] = useState(false);
+
   return (
     <div className={styles.fixheader}>
       <nav className={styles.nav}>
@@ -58,7 +63,16 @@ export default function FixHeader({ props }) {
             </Link>
           </li>
         </div>
+        <div className={styles.right}>
+          <li>
+            <a href="/#">登录</a>
+          </li>
+          <li>
+            <a onClick={() => setRegistry(true)}>注册</a>
+          </li>
+        </div>
       </nav>
+      <Registry registryState={registryState} switchState={() => setRegistry(false)} />
     </div>
   );
 }
