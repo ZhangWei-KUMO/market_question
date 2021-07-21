@@ -15,7 +15,7 @@ import HotIcon from '../public/hot_icon.png';
 import TopIcon from '../public/top_icon.png';
 import LineIcon from '../public/line_icon.png';
 
-const URL = 'http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210609/162322983860c0858e3028b.mp4';
+const URL = 'http://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210721/162684890960f7be8dea44b.mp4';
 class Home extends Component {
   static async getInitialProps() {
     try {
