@@ -1,7 +1,7 @@
 {
     "apps": [
       {
-        "name": "market-app",
+        "name": "web-v2-app",
         "script": "node_modules/next/dist/bin/next",
         "args": "start",
         "cwd": "./",
