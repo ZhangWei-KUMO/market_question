@@ -1,5 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import cloudbase from '@cloudbase/js-sdk';
+// import cloudbase from '@cloudbase/js-sdk';
 import { Component } from 'react';
 import Link from 'next/link';
 import {
@@ -32,9 +32,9 @@ class Registry extends Component {
   }
 
   componentDidMount() {
-    const app = cloudbase.init({
-      env: 'dazv2-9ggkxo9w26cfe2a9',
-    });
+    // const app = cloudbase.init({
+    //   env: 'dazv2-9ggkxo9w26cfe2a9',
+    // });
   }
 
   // 关闭弹窗

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { Component } from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { Drawer } from 'antd';
 import {
   LeftOutlined, UnorderedListOutlined, TagsOutlined, UploadOutlined, VideoCameraFilled,

@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import { Tabs, Radio, Space } from 'antd';
+import { Tabs } from 'antd';
 import styles from './tabVideo.module.css';
 
 const { TabPane } = Tabs;
