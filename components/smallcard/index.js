@@ -1,0 +1,27 @@
+import Image from 'next/image';
+import styles from './Card.module.css';
+
+function Card({
+  name, title, image, types,
+}) {
+  return (
+    <div className={styles.card}>
+      <Image
+        src={image}
+        height={300}
+        width={320}
+        layout="fixed"
+        className={styles.cardImage}
+      />
+      <div className={styles.cardText}>
+        <h3>{name}</h3>
+        <p>{title}</p>
+        {types.map((j) => (
+          <span key={j} className={styles.tag}>{j}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Card;

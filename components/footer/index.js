@@ -2,7 +2,9 @@ import {
   Row, Col, Divider,
 } from 'antd';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
+import QRcode from '../../public/qrcode.jpg';
 
 export default function Footer() {
   return (
@@ -55,6 +57,12 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </Col>
+          <Col lg={16}>
+            <center>
+              <Image src={QRcode} width={120} height={120} alt="答岸公众号" />
+              <p>答岸公众号</p>
+            </center>
           </Col>
         </Row>
         <p>

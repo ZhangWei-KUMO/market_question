@@ -19,22 +19,7 @@
   color: #fff;
   height: 400px;
   margin-bottom: 100px;
-}
 
-.bar .content {
-  width: 900px;
-  margin: 0 auto;
-  display: flex;
-}
-
-.bar .content .left {
-  flex-shrink: 3
-}
-
-.bar .content .text {
-  flex-shrink: 3;
-  padding:40px;
-  
 }
 
 .bar h2 {
@@ -55,15 +40,6 @@
 .bar p {
   font-size: 1.2rem;
   margin-top: 100px;
-}
-
-.imageBox {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  margin-top: -100px;
-  overflow: hidden;
-  border-radius: 20px;
 }
 
 .artical {
@@ -92,5 +68,26 @@
   max-width: 100%;
   display: block;
   margin:0 auto;
-  /* margin-left: -15%; */
+}
+
+.bar .content {
+  width: 900px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head {
+  margin-top: -100px;
+}
+
+.cover {
+  border-radius: 12px;
+}
+
+.text {
+  width: 600px;
+  padding:0 50px;
 }

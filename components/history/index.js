@@ -1,27 +1,44 @@
 import Image from 'next/image';
-import styles from './Card.module.css';
+import { Row, Col } from 'antd';
+import styles from './History.module.css';
 
-function Card({
-  name, title, image, types,
-}) {
+const fakeData = [
+  {
+    _id: '1', title: '曾志伟教你演好琛哥', cover: 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210722/162694647960f93bafe41aa.jpg', master: '曾志伟',
+  },
+  {
+    _id: '2', title: '曾志伟教你演好琛哥', cover: 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210722/162694647960f93bafe41aa.jpg', master: '曾志伟',
+  },
+  {
+    _id: '3', title: '曾志伟教你演好琛哥', cover: 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210722/162694647960f93bafe41aa.jpg', master: '曾志伟',
+  },
+  {
+    _id: '4', title: '曾志伟教你演好琛哥曾志伟教你演好琛哥', cover: 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210722/162694647960f93bafe41aa.jpg', master: '曾志伟',
+  },
+  {
+    _id: '5', title: '曾志伟教你演好琛哥', cover: 'https://dazclassbucket.oss-cn-beijing.aliyuncs.com/uploads/20210722/162694647960f93bafe41aa.jpg', master: '曾志伟',
+  },
+
+];
+function History() {
   return (
-    <div className={styles.card}>
-      <Image
-        src={image}
-        height={400}
-        width={420}
-        layout="fixed"
-        className={styles.cardImage}
-      />
-      <div className={styles.cardText}>
-        <h3>{name}</h3>
-        <p>{title}</p>
-        {types.map((j) => (
-          <span key={j} className={styles.tag}>{j}</span>
-        ))}
-      </div>
+    <div>
+      <Row>
+        {fakeData.map(((item) => (
+          <Col lg={12} key={item._id}>
+            <div className={styles.item}>
+              <Image src={item.cover} layout="fixed" width={200} height={120} className={styles.image} />
+              <div className={styles.text}>
+                <h4>{item.title}</h4>
+                <p>{item.master}</p>
+              </div>
+            </div>
+          </Col>
+        )))}
+
+      </Row>
     </div>
   );
 }
 
-export default Card;
+export default History;

@@ -7,7 +7,8 @@ module.exports = withAntdLess({
     imageSizes: [128, 256, 384],
     domains: ['1306346100.vod2.myqcloud.com',
       '6461-dazv2-9ggkxo9w26cfe2a9-1306346100.tcb.qcloud.la',
-      'https://dazv2-9ggkxo9w26cfe2a9-1306346100.ap-shanghai.app.tcloudbase.com'],
+      'dazclassbucket.oss-cn-beijing.aliyuncs.com',
+      'dazv2-9ggkxo9w26cfe2a9-1306346100.ap-shanghai.app.tcloudbase.com'],
   },
   modifyVars: { '@primary-color': 'red' },
   // optional

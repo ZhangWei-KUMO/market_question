@@ -39,6 +39,7 @@
 .tabPage {
   background-color:rgb(32, 32, 32);
   min-height: 580px;
+  min-width: 1000px;
   padding:30px;
   color: #fff;
 }
@@ -49,6 +50,6 @@
 }
 
 .tabInner {
-  width: 700px;
+  width: 900px;
   margin: 20px auto;
 }

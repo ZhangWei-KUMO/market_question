@@ -16,7 +16,9 @@ import Footer from '../../components/footer';
 import defaultHead from '../../public/defaultHead.jpg';
 import Settings from '../../components/settings';
 import Feedback from '../../components/feedback';
+import History from '../../components/history';
 import Message from '../../components/message';
+import Collection from '../../components/collection';
 
 const { Content, Sider } = Layout;
 const pagemap = {
@@ -90,6 +92,8 @@ function User({ user }) {
                 <h1>{pagemap[tab]}</h1>
               </center>
               <div className={styles.tabInner}>
+                {tab === '1' ? <Collection /> : null}
+                {tab === '2' ? <History /> : null}
                 {tab === '3' ? <Message /> : null}
                 {tab === '4' ? <Settings /> : null}
                 {tab === '5' ? <Feedback /> : null}
