@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Avatar } from 'antd';
 import { MobileOutlined, SearchOutlined } from '@ant-design/icons';
 import styles from './Header.module.css';
-import HeadLogo from '../../public/headLogo.png';
+import HeadLogo from '../../public/headlogo.png';
 import defaultHead from '../../public/defaultHead.jpg';
 import Registry from '../registry';
 import Login from '../login';
@@ -52,7 +52,7 @@ export default function FixHeader({ userid = 'cbddf0af60f5732c17f6a5f01c0efd3d',
           {userid ? (
 
             <li>
-              <a href={`/user/${userid}`}>
+              <a href={`/user/${userid}?tab=1`}>
                 <div className={styles.headBox}>
                   {userHead ? <Avatar src={userHead} size={40} />
                     : <Avatar src={<Image src={defaultHead} />} size={40} />}

@@ -2,6 +2,8 @@
 /* eslint-disable jsx-a11y/html-has-lang */
 import Head from 'next/head';
 import Image from 'next/image';
+import React from 'react';
+import { useRouter } from 'next/router';
 import { Layout, Avatar, Menu } from 'antd';
 import {
   MailOutlined, SettingOutlined, FieldTimeOutlined, HeartOutlined, FormOutlined,
@@ -12,14 +14,30 @@ import FixHeader from '../../components/fixheader';
 import request from '../../utils/request';
 import Footer from '../../components/footer';
 import defaultHead from '../../public/defaultHead.jpg';
+import Settings from '../../components/settings';
+import Feedback from '../../components/feedback';
+import Message from '../../components/message';
 
 const { Content, Sider } = Layout;
+const pagemap = {
+  1: '我的收藏',
+  2: '观看历史',
+  3: '消息中心',
+  4: '账号设置',
+  5: '投诉反馈',
+};
 
 function User({ user }) {
   const {
     name, phone, gender, messages, collection, history,
   } = user;
-  console.log(name, phone, gender, messages, collection, history);
+  const router = useRouter();
+  const { tab } = router.query;
+  const handleClick = (e) => {
+    router.push(`/user/${user._id}?tab=${e.key}`, undefined, { shallow: true });
+  };
+
+  // console.log(name, phone, gender, messages, collection, history);
   return (
     <>
       <Head>
@@ -38,28 +56,28 @@ function User({ user }) {
                 <p className={styles.exprNotice}>会员到期：2022年7月21日</p>
               </center>
             </div>
-            <Menu mode="inline" defaultSelectedKeys={['2']} className={styles.siderMenu}>
-              <Menu.Item key="1">
+            <Menu mode="inline" defaultSelectedKeys={[tab]} className={styles.siderMenu}>
+              <Menu.Item key="1" onClick={handleClick}>
                 <HeartOutlined />
                 {' '}
                 我的收藏
               </Menu.Item>
-              <Menu.Item key="2">
+              <Menu.Item key="2" onClick={handleClick}>
                 <FieldTimeOutlined />
                 {' '}
                 观看历史
               </Menu.Item>
-              <Menu.Item key="3">
+              <Menu.Item key="3" onClick={handleClick}>
                 <MailOutlined />
                 {' '}
                 消息中心
               </Menu.Item>
-              <Menu.Item key="4">
+              <Menu.Item key="4" onClick={handleClick}>
                 <SettingOutlined />
                 {' '}
                 账号设置
               </Menu.Item>
-              <Menu.Item key="5">
+              <Menu.Item key="5" onClick={handleClick}>
                 <FormOutlined />
                 {' '}
                 投诉反馈
@@ -67,7 +85,16 @@ function User({ user }) {
             </Menu>
           </Sider>
           <Content className={styles.content}>
-            ssssss
+            <div className={styles.tabPage}>
+              <center>
+                <h1>{pagemap[tab]}</h1>
+              </center>
+              <div className={styles.tabInner}>
+                {tab === '3' ? <Message /> : null}
+                {tab === '4' ? <Settings /> : null}
+                {tab === '5' ? <Feedback /> : null}
+              </div>
+            </div>
           </Content>
 
         </Layout>

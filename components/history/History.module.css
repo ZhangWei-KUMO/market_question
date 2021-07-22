@@ -1,0 +1,37 @@
+.card {
+    width: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.cardText {
+    padding:120px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    color: rgb(184, 184, 184);
+    background: linear-gradient(180deg, rgba(255,255,255,0), rgb(0, 0, 0));
+}
+
+.cardText h3 {
+    color: rgb(184, 184, 184);
+}
+
+.cardText p {
+    color: #b8b8b8;
+}
+
+.tag {
+    background: none;
+    color: #b8b8b8;
+    margin:5px;
+    border: 1px solid #b8b8b8;
+    padding:4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}

@@ -43,7 +43,7 @@ class Home extends Component {
         <FixHeader />
         <div className={styles.bannerContainer}>
           <div className={styles.bannerBox}>
-            <Image src={homeAd} height={582} width={480} />
+            <Image src={homeAd} height={582} width={450} />
             <video src={URL} muted autoPlay loop className={styles.video} preload="none" />
           </div>
         </div>

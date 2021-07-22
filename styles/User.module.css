@@ -6,7 +6,7 @@
 }
 
 .content {
-  background: #000;
+  background: rgb(0, 0, 0);
   padding: 0 24px;
   min-height: 480px;
 }
@@ -34,4 +34,21 @@
 .exprNotice {
   font-size: 0.7rem;
   color: rgb(184, 184, 184);
+}
+
+.tabPage {
+  background-color:rgb(32, 32, 32);
+  min-height: 580px;
+  padding:30px;
+  color: #fff;
+}
+
+.tabPage h1 {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.tabInner {
+  width: 700px;
+  margin: 20px auto;
 }
