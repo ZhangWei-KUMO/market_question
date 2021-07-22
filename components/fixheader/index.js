@@ -28,19 +28,13 @@ export default function FixHeader() {
         </div>
         <div className={styles.items}>
           <li>
-            <Link href="/">
-              <a href="true">首页</a>
-            </Link>
+            <a href="/">首页</a>
           </li>
           <li>
-            <Link href="/classification">
-              <a href="true">分类</a>
-            </Link>
+            <a href="/classification">分类</a>
           </li>
           <li>
-            <Link href="/news">
-              <a href="true">新闻室</a>
-            </Link>
+            <a href="/news">新闻室</a>
           </li>
         </div>
         <div className={styles.right}>
