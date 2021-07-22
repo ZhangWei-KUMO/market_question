@@ -9,9 +9,9 @@ module.exports = withAntdLess({
       '6461-dazv2-9ggkxo9w26cfe2a9-1306346100.tcb.qcloud.la',
       'https://dazv2-9ggkxo9w26cfe2a9-1306346100.ap-shanghai.app.tcloudbase.com'],
   },
-  modifyVars: { '@primary-color': '#005cc5' },
+  modifyVars: { '@primary-color': 'red' },
   // optional
-  lessVarsFilePath: './src/styles/variables.less',
+  // lessVarsFilePath: './src/styles/variables.less',
   // optional
   lessVarsFilePathAppendToEndOfContent: false,
   // optional https://github.com/webpack-contrib/css-loader#object

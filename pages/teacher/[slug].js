@@ -11,7 +11,7 @@ import request from '../../utils/request';
 import Flag from '../../public/flag-bg.png';
 import Footer from '../../components/footer';
 
-function Help({ master }) {
+function Teacher({ master }) {
   const {
     achieve, author, intro, roles, cover, head, num,
   } = master;
@@ -79,7 +79,7 @@ function Help({ master }) {
   );
 }
 
-Help.getInitialProps = async (ctx) => {
+Teacher.getInitialProps = async (ctx) => {
   const { slug } = ctx.query;
   // 根据大师id请求大师个人信息
   const json = await request(`${API_HOST}/master/find?limit=1`, 'POST', {
@@ -95,4 +95,4 @@ Help.getInitialProps = async (ctx) => {
   return { master: json.data[0] };
 };
 
-export default Help;
+export default Teacher;

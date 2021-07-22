@@ -3,12 +3,17 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Avatar } from 'antd';
+import { MobileOutlined, SearchOutlined } from '@ant-design/icons';
 import styles from './Header.module.css';
 import HeadLogo from '../../public/headLogo.png';
+import defaultHead from '../../public/defaultHead.jpg';
 import Registry from '../registry';
+import Login from '../login';
 
-export default function FixHeader() {
+export default function FixHeader({ userid = 'cbddf0af60f5732c17f6a5f01c0efd3d', userHead }) {
   const [registryState, setRegistry] = useState(false);
+  const [loginState, setLogin] = useState(false);
 
   return (
     <div className={styles.fixheader}>
@@ -39,14 +44,38 @@ export default function FixHeader() {
         </div>
         <div className={styles.right}>
           <li>
-            <a href="/#">登录</a>
+            <SearchOutlined height={60} style={{ color: '#fff', fontSize: '1.2rem' }} />
           </li>
           <li>
-            <a onClick={() => setRegistry(true)}>注册</a>
+            <MobileOutlined height={60} style={{ color: '#fff', fontSize: '1.2rem' }} />
           </li>
+          {userid ? (
+
+            <li>
+              <a href={`/user/${userid}`}>
+                <div className={styles.headBox}>
+                  {userHead ? <Avatar src={userHead} size={40} />
+                    : <Avatar src={<Image src={defaultHead} />} size={40} />}
+                </div>
+              </a>
+            </li>
+
+          )
+            : (
+              <>
+                <li>
+                  <a onClick={() => setLogin(true)}>登录</a>
+                </li>
+                <li>
+                  <a onClick={() => setRegistry(true)}>注册</a>
+                </li>
+              </>
+            )}
+
         </div>
       </nav>
       <Registry registryState={registryState} switchState={() => setRegistry(false)} />
+      <Login loginState={loginState} switchState={() => setLogin(false)} />
     </div>
   );
 }
