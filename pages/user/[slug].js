@@ -19,6 +19,7 @@ function User({ user }) {
   const {
     name, phone, gender, messages, collection, history,
   } = user;
+  console.log(name, phone, gender, messages, collection, history);
   return (
     <>
       <Head>

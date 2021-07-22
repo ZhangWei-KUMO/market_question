@@ -3,7 +3,7 @@
 import { Component } from 'react';
 import Link from 'next/link';
 import {
-  Modal, Input, Select, Button, Checkbox,
+  Modal, Input, Select, Button,
 } from 'antd';
 
 import styles from './Login.module.css';
