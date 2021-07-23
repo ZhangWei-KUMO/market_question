@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import Image from 'next/image';
 import { Row, Col } from 'antd';
 import styles from './History.module.css';

@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import {
   List, message, Avatar, Spin,
 } from 'antd';
@@ -15,46 +15,49 @@ class Message extends Component {
       loading: false,
       hasMore: true,
     };
+    this.handleInfiniteOnLoad = this.handleInfiniteOnLoad.bind(this);
   }
-    async componentDidMount(){
-      const json = await request(fakeDataUrl, 'GET');
-        this.setState({
-          data: json.data,
-        });
-    };
 
-    handleInfiniteOnLoad = () => {
-      const { data } = this.state;
+  async componentDidMount() {
+    const json = await request(fakeDataUrl, 'GET');
+    this.setState({
+      data: json.data,
+    });
+  }
+
+  handleInfiniteOnLoad() {
+    const { data } = this.state;
+    this.setState({
+      loading: true,
+    });
+    if (data.length > 14) {
+      message.warning('Infinite List loaded all');
       this.setState({
-        loading: true,
+        hasMore: false,
+        loading: false,
       });
-      if (data.length > 14) {
-        message.warning('Infinite List loaded all');
-        this.setState({
-          hasMore: false,
-          loading: false,
-        });
-        return;
-      }
-      const json = request(fakeDataUrl, 'GET');
-        this.setState({
-          loading: false,
-          data: json.data,
-        });
-    };
+      return;
+    }
+    const json = request(fakeDataUrl, 'GET');
+    this.setState({
+      loading: false,
+      data: json.data,
+    });
+  }
 
   render() {
+    const { loading, hasMore, data } = this.state;
     return (
       <div className="demo-infinite-container">
         <InfiniteScroll
           initialLoad={false}
           pageStart={0}
           loadMore={this.handleInfiniteOnLoad}
-          hasMore={!this.state.loading && this.state.hasMore}
+          hasMore={!loading && hasMore}
           useWindow={false}
         >
           <List
-            dataSource={this.state.data}
+            dataSource={data}
             renderItem={(item) => (
               <List.Item key={item.id}>
                 <List.Item.Meta
@@ -68,7 +71,7 @@ class Message extends Component {
               </List.Item>
             )}
           >
-            {this.state.loading && this.state.hasMore && (
+            {loading && hasMore && (
               <div className="demo-loading-container">
                 <Spin />
               </div>

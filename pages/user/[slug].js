@@ -31,12 +31,13 @@ const pagemap = {
 
 function User({ user }) {
   const {
-    name, phone, gender, messages, collection, history,
+    // name, phone, gender, messages, collection, history,
+    _id,
   } = user;
   const router = useRouter();
   const { tab } = router.query;
   const handleClick = (e) => {
-    router.push(`/user/${user._id}?tab=${e.key}`, undefined, { shallow: true });
+    router.push(`/user/${_id}?tab=${e.key}`, undefined, { shallow: true });
   };
 
   // console.log(name, phone, gender, messages, collection, history);
