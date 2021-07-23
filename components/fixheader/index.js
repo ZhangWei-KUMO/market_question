@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Avatar } from 'antd';
 import { MobileOutlined, SearchOutlined } from '@ant-design/icons';
 import styles from './Header.module.css';
-import HeadLogo from '../../public/headlogo.png';
+import HeadLogo from '../../public/headLogo.png';
 import defaultHead from '../../public/defaultHead.jpg';
 import Registry from '../registry';
 import Login from '../login';
