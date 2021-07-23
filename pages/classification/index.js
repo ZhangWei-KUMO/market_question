@@ -40,7 +40,7 @@ function Classification({ items }) {
       <Content className={styles.box}>
         <Layout>
           <Sider width={200} className={styles.sider}>
-            <Menu mode="inline" defaultSelectedKeys={['全部']} className={styles.siderMenu}>
+            <Menu defaultSelectedKeys={['全部']} className={styles.siderMenu}>
               <Menu.Item key="全部" onClick={handleClick}>
                 全部
               </Menu.Item>
